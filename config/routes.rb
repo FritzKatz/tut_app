@@ -1,4 +1,5 @@
 TutApp::Application.routes.draw do
+  get "users/new"
   # get "pages/home"
   # get "pages/help"
   # get "pages/about"
@@ -8,7 +9,9 @@ TutApp::Application.routes.draw do
 
   match '/help',    to: 'pages#help'
   match '/about',   to: 'pages#about'
-  match '/contact', to: 'pages#contact' 
+  match '/contact', to: 'pages#contact'
+
+  match '/signup',  to: 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
