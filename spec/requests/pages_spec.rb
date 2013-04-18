@@ -1,7 +1,12 @@
 require 'spec_helper'
 
 describe "Pages" do
+
+  before(:each) do
+    @base_title = "Tutorial App"
+  end
  
+
  describe "Home page" do
     it "should have the content 'Home'" do
       visit '/pages/home'
@@ -10,8 +15,7 @@ describe "Pages" do
 
     it "should have the right title" do
       visit '/pages/home'
-      page.should have_selector('title', 
-                        :text => "Tutorial App | Home")
+      page.should have_selector('title', :text => "#{@base_title} | Home")
     end
  end
 
@@ -24,8 +28,7 @@ describe "Pages" do
 
     it "should have the title 'Help'" do
       visit '/pages/help'
-      page.should have_selector('title',
-                        :text => "Tutorial App | Help")
+      page.should have_selector('title', :text => "#{@base_title} | Help")
     end
  end
 
@@ -38,8 +41,7 @@ describe "Pages" do
 
     it "should have the title 'About Us'" do
       visit '/pages/about'
-      page.should have_selector('title',
-                        :text => "Tutorial App | About Us")
+      page.should have_selector('title', :text => "#{@base_title} | About Us")
     end
  end
 
