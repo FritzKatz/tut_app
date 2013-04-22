@@ -1,9 +1,10 @@
 TutApp::Application.routes.draw do
-  get "users/new"
+  # get "users/new"
   # get "pages/home"
   # get "pages/help"
   # get "pages/about"
   # get "pages/contact"
+  resources :users
   
   root to: 'pages#home'
 
